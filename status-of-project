@@ -1,0 +1,10 @@
+### 2019-12-17
+
+Vi har skapat basic funktionalitet (typ CRUD) för de olika mikrotjänsterna (bookit-event, bookit-registration, bookit-notification). 
+Mikrotjänsterna har varsin Dockerfile och kan därför lätt byggas till Docker images. Angular GUI (bookit-ng) har funktionalitet för att visa upp event, skapa event, anmäla/avanmäla sig till events. Vi har inte lagt så mycket tid på design/UX av GUIt. Vi persisterar inte någon data för tillfället utan allt sparas in-memory per service under applikationens livstid. Planen är att använda Kafka för persistering. 
+
+Vi har experimenterat med att lägga upp applikationen (både mikrotjänsterna och GUIt) i Amazon Web Services (AWS), så att den fungerar i en development-miljö (dvs den kör inte i produktion). Våra Docker containers kör just nu via AWS Fargate (vilket är en del av AWS ECS) och vi planerar att ha ett Kafka kluster som omfattar tre AWS EC2-instanser. Vi har också satt upp en AWS API Gateway som en gemensam ingång till applikationen. Vi har skapat Circle CI byggen för att lägga upp Docker images till Dockerhub och statiskt webinnehåll till AWS S3.
+
+Vår plan framöver är att kunna färdigställa uppsättningen av Kafka i AWS så att mikrotjänsterna kan kommunicera via Kafka Topics. 
+Just nu finns det en Amazon Machine Image (AMI) för Kafka server som endast innehåller Zookeeper just nu, men tanken är att den också ska köra Kafka dvs att vi kommer köra två Java processer i maskinen (en för Zookeeper och en för Kafka). Maskinerna kommer ha fasta IPn i det privata nätverket (AWS VPCs subnät). För att kunna använda Kafka via Docker containers behöver vi en persistent volym vilket inte är tillgängligt via AWS Fargate. 
+
