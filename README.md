@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Introduktion
 Den här sidan innehåller information som kan vara bra att veta för nya utvecklare som börjar arbeta med det interna projektet med arbetsnamnet Bookit. Målet med projektet är att utveckla en webapplikation för att administrera evengemang (t.ex. fester och konferenser), typ som EventBrite men mer anpassat för just Knowit. 
 
