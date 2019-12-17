@@ -7,7 +7,7 @@ Den här sidan innehåller information som kan vara bra att veta för nya utveck
 Vi kommunicerar främst via vår Slack-kanal (knowit-event-app på knowit.slack.com (du måste skapa konto)) och ibland via Outlook. 
 
 # Inloggning till verktyg vi använder
-Vi har skapat en gemensam email för vårt team som kallas _eventapp@knowit.se_. Den använder vi vid registrering för olika verktyg för att inte medlemmarna i teamet ska vara hårt knutna till verktygen. 
+Vi har skapat en gemensam email för vårt team som kallas _eventapp@knowit.se_. Den använder vi vid registrering för olika verktyg för att inte medlemmarna i teamet ska vara hårt knutna till verktygen. För lösenord maila till _eventapp@knowit.se_ eller kontaka Erik S Johansson för kontaktuppgifter till teammedlemmarna. 
 
 ## Github
 Vi har en gemensam inloggning via _eventapp@knowit.se_ och ett lösenord som distribueras via vår Slack-kanal. Vi använder det gemensamma kontot för att skapa och sätta upp repositories i Github, och sedan bjuder vi in våra privata konton till alla repositories. 
