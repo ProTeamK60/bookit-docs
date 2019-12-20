@@ -16,11 +16,14 @@ Vi har en gemensam inloggning via _eventapp@knowit.se_ och ett lösenord som dis
 ## Amazon Web Services (AWS)
 Vi har en gemensam inloggning via _eventapp@knowit.se_ och ett lösenord som distribueras via vår Slack-kanal. Det gemensamma kontot är skapat via AWS Organisations från Eriks konto för att ha gemensam betalning via hans konto. Vårt gemensamma konto har i sin tur skapat en AWS IAM user för varje person i teamet och det är via de kontona vi ska använda AWS. Skapa ett IAM User för dig och sedan tryck "Glömt Lösenord" när du loggar in första gången så får du skapa ett lösenord. 
 
-För att komma åt våra AWS EC2-instanser via SSH så behöver du privata nycklar för dessa vilket kan finnas på Dropbox-kontot för _eventapp@knowit.se_. Du kan sedan använda dessa enligt följande:
+För att komma åt våra AWS EC2-instanser via SSH så behöver du privata nycklar för dessa vilket kan finnas på Dropbox-kontot för _eventapp@knowit.se_. Du kan sedan använda dessa enligt följande om instansen har ett publikt ip:
 ```
 ssh -i <private key file> ec2-user@<ec2-instance-ip>
 ```
-
+De instanser som bara har private ip adresser kan man nå via en så kallad Bastion host med publikt ip. 
+```
+ssh -i <private key file>  ec2-user@<ec2-instance-private-ip> -o "proxycommand ssh -W %h:%p -i <private key file>  ec2-user@<Bastion-host-public-ip>"
+```
 ## CircleCI
 Logga in på vårt gemensamma konto på Github (dvs _eventapp@knowit.se_) och tryck på "logga in via Github" när du ska logga in på CircleCI.
 
